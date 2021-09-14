@@ -1,0 +1,55 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Swift",
+            "type": "shell",
+            "command": "${file}",
+            "runOptions": {},
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "${env:windir}/System32/cmd.exe",
+                    "args": [
+                        "/C",
+                        "C:/dev/Code/Swift/core/run.bat",
+                        "${fileBasenameNoExtension}",
+                        "${fileExtname}",
+                    ]
+                }
+            },
+            "problemMatcher": {
+                "owner": "swift",
+                "applyTo": "openDocuments",
+                "background": {
+                    "beginsPattern": "^Building Executable .*\\.swift$",
+                    "endsPattern": "^Task Done .*\\.swift$",
+                },
+                "pattern": {
+                    "regexp": "^(.*?):(\\d+):(\\d+):\\s+(\\w+):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5,
+                },
+                "fileLocation": "autoDetect",
+            },
+            "detail": "Building Swift File: ${relativeFile}",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+    ]
+}

@@ -14,7 +14,7 @@
                     "executable": "${env:windir}/System32/cmd.exe",
                     "args": [
                         "/C",
-                        "C:/dev/Code/Swift/core/run.bat",
+                        "${workspaceFolder}/core/run.bat",
                         "${fileBasenameNoExtension}",
                         "${fileExtname}"
                     ]

@@ -22,7 +22,7 @@ set SWIFTFLAGS=-sdk %SDKROOT% -resource-dir %SDKROOT%\usr\lib\swift -I %SDKROOT%
 
 @REM Create Executable
 mkdir build > nul 2>&1
-echo Building Executable %1%2
+echo Building Executable %1.exe
 swiftc %SWIFTFLAGS% -emit-executable -j 4 -num-threads 4 -o build\%1.exe %3
 mkdir bin > nul 2>&1
 move build\%1.exe bin\%1.exe > nul 2>&1
@@ -30,7 +30,7 @@ move build\%1.exe bin\%1.exe > nul 2>&1
 IF %errorlevel% EQU 0 (
     @REM Create cache
     copy /Y %3 build\swift.tmp > nul
-    echo Built %1%2 @ build\%1.exe
+    echo Built %1%2 @ bin\%1.exe
 ) ELSE (
     echo Error Level: %errorlevel%
     echo Build %1%2 Failed!

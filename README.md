@@ -50,11 +50,8 @@ Programs and Content that needs to be downloaded and where to find it :)
 
 1. Open the [`Repo`](https://github.com/TWoolhouse/Swift/) ZIP and extract it to the directory you want to develop all of your swift code in. So make it a good one! No seriously, you'll regret it later just dumping it in documents... Trust me. I have mine in `C:\dev\Swift\SWIFT_CODE_HERE` so I would empty the contents of `Swift-master.zip\Swift-master\` inside the `Swift\` directory. (From here on if I reference `C:\dev\Swift\` just change it to whatever you are using).
 
-1. Right click `C:\dev\Swift\core\open.bat` and `Run as administrator`. If windows tells you it's unsafe to run. Trust me bro. People on the internet never lie :)
-    1. Wait for the script to pop up and it'll say `Press any key to continue . . .` so do that.
-    1. Wait a few moments again until a prompt for you to type appears. Enter `install.bat` and let that run finish.
-    1. It'll prompt you to type `exit` ... Yeah do that.
-    1. Now you can close the terminal window and we should be good-ish.
+1. Right click `C:\dev\Swift\core\install.bat` and `Run as administrator`. If windows tells you it's unsafe to run. Trust me bro. People on the internet never lie :)
+    1. Wait for the script to like do it's thing, should only take a second, then it should all be good-ish.
 
 1. Install [`Visual Studio Code`](https://visualstudio.microsoft.com/) Again just sign your soul to the devil and all nothing new.
 

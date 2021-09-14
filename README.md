@@ -26,7 +26,7 @@ Programs and Content that needs to be downloaded and where to find it :)
 
 1. [TWoolhouse/Swift Repo](https://github.com/TWoolhouse/Swift/)
 
-    Download the contents of this repository from github. The green `Code` button and download the ZIP.
+    Download the contents of this repository from github. The green `Code` button and download the ZIP. (This is the same page you are currently reading, just scroll to the top.)
 
 ## Instructions
 

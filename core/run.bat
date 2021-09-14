@@ -19,11 +19,12 @@ IF %errorlevel% EQU 0 (
 @REM Setup ENV
 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
 set SWIFTFLAGS=-sdk %SDKROOT% -resource-dir %SDKROOT%\usr\lib\swift -I %SDKROOT%\usr\lib\swift -L %SDKROOT%\usr\lib\swift\windows
+set SWIFTCFG=-j 4 -num-threads 4
 
 @REM Create Executable
 mkdir build > nul 2>&1
 echo Building Executable %1.exe
-swiftc %SWIFTFLAGS% -emit-executable -j 4 -num-threads 4 -o build\%1.exe %3
+swiftc %SWIFTFLAGS% %SWIFTCFG% -emit-executable -o build\%1.exe %3
 mkdir bin > nul 2>&1
 move build\%1.exe bin\%1.exe > nul 2>&1
 

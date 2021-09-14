@@ -72,7 +72,7 @@ Programs and Content that needs to be downloaded and where to find it :)
 
 1. You can now, hopefully run swift scripts from vscode :)))))) Have fun changing the colours n stuff and hating using swift on Windows! Thanks Apple, I hate you.
 
-### Notes
+## Notes
 
 Fun things to note while using this terrible thing I've hashed togeather in a day or two.
 
@@ -90,3 +90,40 @@ Fun things to note while using this terrible thing I've hashed togeather in a da
 
 * Namespace Collisions
     * Im bad at programming lol
+
+## How it Works
+
+If you don't care, stop reading. Seriously, I don't blame you. It's just boring :)
+
+### Swift Toolchain and VS Build Tools
+
+Sooo swift is built on-top of C, C++ effectively so we need the VS Build Tools to provide the C compiler on windows to produce the binary (.exe).
+
+The Swift Toolchain kinda converts the swift code into C which then internally, they use the MSVC Compiler. Simples right. Okay I'm lying to you, it uses LLVM but idc enough.
+
+### That weird open.bat and install.bat
+
+Once swift and msvc are installed swift needs to just move a few files around. However, not only are they in a dumb folder requiring admin to access, they also require enviromental variables (not the planet kind) only provided by the devloper console.
+
+So open.bat launches an instance of the devloper console.
+Then install.bat does the moving and stuff, neat right.
+
+### The quirky run.bat file.
+
+Now this is the *magic*. Yeah I'm cool thanks for asking.
+
+So when you start the build (configured in `.vscode\tasks.json`), it bascially just executes `core\run.bat`. If you are really interested you can read through the code but here's the overview.
+
+1. Check if the file we are trying to compile is a .swift and exit if it's not.
+1. Look at the cache, see if it matches the file we are currently compiling, if so, do we have an .exe for this file already. When both of these conditions are true it exits the script early without an error so vscode will run it.
+1. So now we actually have to build the code.
+1. Set up the enviroment by loading the developer console to get the enviroment variables.
+1. Create a variable full of swift flags using that env.
+1. Make the `build\` directory if it doesn't exist.
+1. Run the main swift compiler with all the settings and set the build directory as our output.
+1. Move the .exe to the newly created `bin\` directory
+1. If any error occured during compilation, say we failed to build, else copy the source .swift file to the cache.
+1. Done :)
+
+The `.vscode\launch.json` will finally launch the new .exe file in the same working directory as the source .swift file.
+This is output to the console by vscode.

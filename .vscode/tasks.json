@@ -16,7 +16,7 @@
                         "/C",
                         "C:/dev/Code/Swift/core/run.bat",
                         "${fileBasenameNoExtension}",
-                        "${fileExtname}",
+                        "${fileExtname}"
                     ]
                 }
             },
@@ -25,7 +25,7 @@
                 "applyTo": "openDocuments",
                 "background": {
                     "beginsPattern": "^Building Executable .*\\.swift$",
-                    "endsPattern": "^Task Done .*\\.swift$",
+                    "endsPattern": "^Task Done .*\\.swift$"
                 },
                 "pattern": {
                     "regexp": "^(.*?):(\\d+):(\\d+):\\s+(\\w+):\\s+(.*)$",
@@ -33,9 +33,9 @@
                     "line": 2,
                     "column": 3,
                     "severity": 4,
-                    "message": 5,
+                    "message": 5
                 },
-                "fileLocation": "autoDetect",
+                "fileLocation": "autoDetect"
             },
             "detail": "Building Swift File: ${relativeFile}",
             "presentation": {
@@ -50,6 +50,6 @@
                 "kind": "build",
                 "isDefault": true
             }
-        },
+        }
     ]
 }

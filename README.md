@@ -98,12 +98,10 @@ Sooo swift is built on-top of C, C++ effectively so we need the VS Build Tools t
 
 The Swift Toolchain kinda converts the swift code into C which then internally, they use the MSVC Compiler. Simples right. Okay I'm lying to you, it uses LLVM but idc enough.
 
-### That weird open.bat and install.bat
+### That weird install.bat
 
 Once swift and msvc are installed swift needs to just move a few files around. However, not only are they in a dumb folder requiring admin to access, they also require enviromental variables (not the planet kind) only provided by the devloper console.
-
-So open.bat launches an instance of the devloper console.
-Then install.bat does the moving and stuff, neat right.
+So install.bat does the moving and stuff after opening the dev console, neat right.
 
 ### The quirky run.bat file.
 

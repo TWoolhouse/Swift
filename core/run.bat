@@ -38,3 +38,4 @@ IF %errorlevel% EQU 0 (
 )
 @REM Done
 echo Task Done %1%2
+exit /b %errorlevel%

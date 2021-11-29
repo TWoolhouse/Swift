@@ -7,6 +7,7 @@
             "label": "Swift",
             "type": "shell",
             "command": "${file}",
+            "runOptions": {},
             "options": {
                 "cwd": "${workspaceFolder}",
                 "shell": {
@@ -15,7 +16,9 @@
                         "/C",
                         "${workspaceFolder}/core/run.bat",
                         "${fileBasenameNoExtension}",
-                        "${fileExtname}"
+                        "${fileExtname}",
+                        "${fileDirname}",
+                        "${relativeFileDirname}",
                     ]
                 }
             },
@@ -27,7 +30,7 @@
                     "endsPattern": "^Task Done .*\\.swift$"
                 },
                 "pattern": {
-                    "regexp": "^(.+?):(\\d+):(\\d+):\\s+(error|warning|note|\\w+?):\\s+(.+)$",
+                    "regexp": "^(.*?):(\\d+):(\\d+):\\s+(error|warning|note|\\w+):\\s+(.*)$",
                     "file": 1,
                     "line": 2,
                     "column": 3,

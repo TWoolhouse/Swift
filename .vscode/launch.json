@@ -9,7 +9,7 @@
             "type": "cppvsdbg",
             "request": "launch",
             "preLaunchTask": "Swift",
-            "program": "${workspaceRoot}/bin/${fileBasenameNoExtension}.exe",
+            "program": "${workspaceRoot}/bin/${relativeFileDirname}/main.exe",
             "cwd": "${fileDirname}",
             "environment": [],
             "console": "integratedTerminal"

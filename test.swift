@@ -1,3 +1,10 @@
-// Cool Swift Test Code!
+func t(a: Int) -> Int {
+	return 2 * a
+}
 
-print("Hello World!")
+func s(_ a: Int) -> Int {
+	return 2 * a
+}
+
+print(t(a: 5))
+print(s(5))

@@ -1,0 +1,10 @@
+bin/
+build/
+*/*
+
+!.gitignore
+!core/
+!.vscode/**
+
+!test.swift
+!example/**
